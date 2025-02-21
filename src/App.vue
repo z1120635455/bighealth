@@ -1,6 +1,10 @@
 <template>
-  <div>
-    <h1>app</h1>
+  <div class="container">
+    <HospitalTop/>
+    <div class="content">
+      <router-view></router-view>
+    </div>
+    <HospitalBottom/>
   </div>
 </template>
 
@@ -8,6 +12,16 @@
 
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .content {
+    margin-top: 70px;
+    width: 1200px;
+    min-height: 700px;
+  }
+}
 
 </style>
