@@ -3,14 +3,38 @@
     <div class="content">
       <div class="left">地区:</div>
       <ul>
-        <li class="active">全部</li>
-        <li v-for="item in 40" :key="item">东城区</li>
+        <li :class="{active:activeFlag==''}" @click="changeRegion('')">全部</li>
+        <li :class="{active:activeFlag==item.value}" v-for="item in regionArr" :key="item.value" @click="changeRegion(item.value)">{{item.name}}</li>
       </ul>
     </div>
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import {defineEmits, onMounted, ref} from "vue";
+import {HospitalLevelAndRegionArr, HospitalLevelAndRegionResponseData} from "@/api/home/type";
+import {reqHospitalLevelAndRegion} from "@/api/home";
+let regionArr = ref<HospitalLevelAndRegionArr>([]);
+
+
+onMounted(() => {
+  getRegion();
+});
+const getRegion = async () => {
+  let res: HospitalLevelAndRegionResponseData =
+      await reqHospitalLevelAndRegion("Beijin");
+  //存储医院等级的数据
+  if (res.code == 200) {
+    regionArr.value = res.data;
+  }
+};
+let activeFlag = ref<string>('')
+let $emit = defineEmits(['getRegion']);
+const changeRegion = (region:string) => {
+  activeFlag.value = region
+  $emit('getRegion',region)
+}
+
 
 </script>
 
