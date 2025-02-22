@@ -5,10 +5,13 @@
       v-model="hosname"
       :fetch-suggestions="fetchData"
       clearable
-      placeholder="请你输入医院的名称"
+      placeholder="请你输入医院的名称111"
       @select="goDetail"
     />
-    <el-button type="primary" :icon="Search">搜索</el-button>
+    <el-button-group>
+      <el-button class="left" type="primary"></el-button>
+      <el-button :round="false" class="el-icon--right right" type="primary" :icon="Search">搜索</el-button>
+    </el-button-group>
   </div>
 </template>
 
@@ -51,11 +54,23 @@ const goDetail = (item: any) => {
   justify-content: center;
   align-items: center;
   margin: 10px 0px;
-
+  .left {
+    display: none;
+  }
+  .right {
+    height: 38px;
+    margin-left: -3px;
+  }
+  ::v-deep(.el-input__inner) {
+    border-radius: 0px;
+    //background: red;
+    height: 35px;
+  }
   ::v-deep(.el-autocomplete) {
     width: 600px;
     max-width: 600px;
-    //margin-right: 10px;
+    //margin-left: 10px;
+    //border-radius: 0px;
   }
 }
 </style>
