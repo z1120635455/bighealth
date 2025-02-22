@@ -5,7 +5,7 @@
       v-model="hosname"
       :fetch-suggestions="fetchData"
       clearable
-      placeholder="请你输入医院的名称111"
+      placeholder="请你输入医院的名称"
       @select="goDetail"
     />
     <el-button-group>

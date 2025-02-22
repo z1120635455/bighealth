@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-card style="max-width: 480px" shadow="hover">
+    <el-card style="max-width: 480px" shadow="hover" @click="goDetail">
       <div class="content">
         <div class="left">
           <div class="hospital_name">
@@ -29,8 +29,15 @@
 
 <script setup lang="ts">
 import { Timer, OfficeBuilding } from "@element-plus/icons-vue";
+import {ref} from "vue";
+import {useRouter} from "vue-router";
 
-defineProps(["hospitalInfo"]);
+let props = defineProps(["hospitalInfo"]);
+let $router = useRouter()
+let hoscode = ref<string>('')
+const goDetail = (item:any) => {
+  $router.push({ path: "/hospital/register" ,query:{hoscode:props.hospitalInfo.hoscode}});
+}
 </script>
 
 <style lang="scss" scoped>
