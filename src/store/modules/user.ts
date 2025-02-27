@@ -52,7 +52,7 @@ const useUserStore = defineStore('User', {
         },
         //查询微信扫码的接口(看本地存储是否存储数据)
         queryState() {
-            //开启定时器每隔一段时间问:本地村是都拥有用户信息
+            //开启定时器每隔一段时间问:本地存储是都拥有用户信息
             let timer = setInterval(() => {
                 //本地存储已有有数据:扫码成功
                 if (GET_TOKEN()) {
