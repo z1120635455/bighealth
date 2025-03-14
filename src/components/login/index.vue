@@ -249,7 +249,7 @@ const login = async () => {
 };
 
 //自定义校验规则:手机号码自定义校验规则
-const validatorPhone = (rule: any, value: any, callBack: any) => {
+const validatorPhone = ( value: any, callBack: any) => {
   //rule:即为表单校验规则对象
   //value:即为当前文本的内容
   //callBack:回调函数
@@ -262,7 +262,7 @@ const validatorPhone = (rule: any, value: any, callBack: any) => {
 };
 
 //验证码自定义校验规则
-const validatorCode = (rule: any, value: any, callBack: any) => {
+const validatorCode = ( value: any, callBack: any) => {
   //rule:即为表单校验规则对象
   //value:即为当前文本的内容
   //callBack:回调函数

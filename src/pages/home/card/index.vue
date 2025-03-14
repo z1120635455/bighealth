@@ -29,13 +29,12 @@
 
 <script setup lang="ts">
 import { Timer, OfficeBuilding } from "@element-plus/icons-vue";
-import {ref} from "vue";
 import {useRouter} from "vue-router";
 
 let props = defineProps(["hospitalInfo"]);
 let $router = useRouter()
-let hoscode = ref<string>('')
-const goDetail = (item:any) => {
+// let hoscode = ref<string>('')
+const goDetail = () => {
   $router.push({ path: "/hospital/register" ,query:{hoscode:props.hospitalInfo.hoscode}});
 }
 </script>

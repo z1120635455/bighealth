@@ -52,6 +52,7 @@ let $route = useRoute()
 const goUser = (path:string) => {
   $router.push({ path });
 }
+
 </script>
 
 <style lang="scss" scoped>

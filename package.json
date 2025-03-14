@@ -13,6 +13,7 @@
     "axios": "^1.7.9",
     "date-fns": "^4.1.0",
     "element-plus": "^2.9.5",
+    "nprogress": "^0.2.0",
     "pinia": "2.0.36",
     "qrcode": "^1.5.4",
     "sass": "^1.85.0",
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.13.4",
+    "@types/nprogress": "^0.2.3",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vue/tsconfig": "^0.7.0",
     "prettier": "^3.5.1",

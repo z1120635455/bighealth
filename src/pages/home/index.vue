@@ -64,7 +64,7 @@ const getHospitalInfo = async () =>{
 const currentChange = () =>{
   getHospitalInfo()
 }
-const sizeChange = (value: number) =>{
+const sizeChange = () =>{
   //当前页码归第一页
   // pageNo.value = 1;
   //再次发请求获取医院的数据

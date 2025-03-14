@@ -228,7 +228,7 @@ const submit = async () => {
 };
 
 //自定义校验规则姓名方法
-const validatorName = (rule: any, value: any, callBack: any) => {
+const validatorName = (value: any, callBack: any) => {
   //rule:即为当前校验字段的校验规则对象
   const reg = /^[\u00B7\u3007\u3400-\u4DBF\u4E00-\u9FFF\uE000-\uF8FF\uD840-\uD8C0\uDC00-\uDFFF\uF900-\uFAFF]+$/;
   if (reg.test(value)) {
@@ -239,7 +239,7 @@ const validatorName = (rule: any, value: any, callBack: any) => {
 };
 
 //证件类型校验的方法
-const validatorType = (rule: any, value: any, callBack: any) => {
+const validatorType = (value: any, callBack: any) => {
   if (value == "10" || value == "20") {
     callBack();
   } else {
@@ -248,7 +248,7 @@ const validatorType = (rule: any, value: any, callBack: any) => {
 };
 
 //证件号码的校验方法
-const validatorNo = (rule: any, value: any, callBack) => {
+const validatorNo = (value: any,callBack: any) => {
   let sfz = /^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{4}$/;
   let hkb = /^\d{9}$/;
   if (sfz.test(value) || hkb.test(value)) {
@@ -258,7 +258,7 @@ const validatorNo = (rule: any, value: any, callBack) => {
   }
 };
 //证件照图片的
-const validatorUrl = (rule: any, value: any, callBack: any) => {
+const validatorUrl = (value: any, callBack: any) => {
   if (value.length) {
     callBack();
   } else {
